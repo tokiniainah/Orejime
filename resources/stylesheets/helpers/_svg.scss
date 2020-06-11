@@ -1,0 +1,11 @@
+/**
+ * ----------------------------------
+ * Svg
+ * ----------------------------------
+ */
+@svg-load cookies url('cookies.svg') {
+  path,
+  circle {
+    fill: col(gold);
+  }
+}

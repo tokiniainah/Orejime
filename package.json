@@ -1,0 +1,52 @@
+{
+  "name": "orejime",
+  "version": "1.0.0",
+  "description": "orejime - cookie consent module",
+  "main": "index.js",
+  "author": "Tokiniaina RAVALOMANGA <t.ravalomanga@fulldigits.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "stylelint --syntax scss --fix resources/stylesheets/*.scss",
+    "build": "yarn compile --env=development",
+    "build:production": "yarn compile --env=production",
+    "compile": "webpack"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@ravorona/eslint-config": "^1.2.4",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "chalk": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "del": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "mini-css-extract-plugin": "^0.9.0",
+    "path": "^0.12.7",
+    "postcss-calc": "^7.0.2",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-selectors": "^5.1.2",
+    "postcss-inline-svg": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-replace": "^1.1.0",
+    "postcss-reporter": "^6.0.1",
+    "postcss-selector-matches": "^4.0.0",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.2.0",
+    "stylelint-webpack-plugin": "^1.2.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-fix-style-only-entries": "^0.4.0",
+    "yargs": "^15.1.0"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "orejime": "^1.2.3",
+    "regenerator-runtime": "^0.13.3"
+  }
+}

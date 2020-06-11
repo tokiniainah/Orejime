@@ -1,0 +1,134 @@
+/**
+ * ----------------------------------
+ * form
+ * ----------------------------------
+ */
+// Variables
+$switcher-bg-enable: col(blue) !default;
+$switcher-color: col(white) !default;
+
+button {
+  &:matches(.orejime-Notice-learnMoreButton, .orejime-Notice-declineButton, .orejime-Notice-saveButton) {
+    @include button(col(blue), col(white), col(gold));
+
+    font-family: $font-montserrat;
+    margin-bottom: $gutter;
+  }
+
+  &:matches(.orejime-Modal-saveButton) {
+    @include button(col(blue), col(white), col(gold));
+
+    font-family: $font-montserrat;
+  }
+
+  &:matches(.orejime-Modal-closeButton) {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    line-height: 0;
+
+    svg {
+      stroke: col(blue);
+    }
+  }
+
+  &:matches(.orejime-AppToggles-disableAll, .orejime-AppToggles-enableAll) {
+    font-family: $font-montserrat;
+    font-weight: 600;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: col(blue);
+
+    @include link(blue, gold);
+
+    &[disabled] {
+      opacity: .3;
+    }
+  }
+}
+
+// Switcher
+.orejime-AppItem-switch {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.orejime-AppItem-slider {
+  box-shadow: $box-shadow;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $switcher-bg-enable;
+  transition: .3s;
+  width: 50px;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid transparent;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: $gutter;
+    width: $gutter;
+    left: 4px;
+    bottom: 4px;
+    background-color: $switcher-color;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+}
+
+.orejime-AppItem-switchLabel {
+  position: absolute;
+  width: 50px;
+  top: 34px;
+  overflow: ellipsis;
+  font-size: .8em;
+  text-align: center;
+}
+
+.orejime-AppItem-switch--disabled {
+  .orejime-AppItem-slider {
+    cursor: default;
+    opacity: .5;
+  }
+
+  .orejime-AppItem-switchLabel {
+    color: $switcher-bg-enable;
+  }
+}
+
+.orejime-AppItem-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 50px;
+  height: 30px;
+
+  &:focus {
+    & + .orejime-AppItem-label .orejime-AppItem-slider {
+      border-color: col(white);
+      outline-offset: 1px;
+    }
+  }
+
+  &:checked {
+    & + .orejime-AppItem-label .orejime-AppItem-slider {
+      background-color: $switcher-bg-enable;
+
+      &:before {
+        transform: translateX(24px);
+      }
+    }
+  }
+}

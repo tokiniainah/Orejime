@@ -1,0 +1,28 @@
+/**
+ * -------------------------------------------------------------
+ * Custom media
+ * -------------------------------------------------------------
+ */
+// 360px
+@custom-media --xsmall (min-width: #{media(xsmall)});
+
+// 640px
+@custom-media --small (min-width: #{media(small)});
+
+// 768px
+@custom-media --tablet (min-width: #{media(tablet)});
+
+// 960px
+@custom-media --medium (min-width: #{media(medium)});
+
+// 1200px/
+@custom-media --large (min-width: #{media(large)});
+
+// 1440px
+@custom-media --xlarge (min-width: #{media(xlarge)});
+
+// Landscape mode
+@custom-media --landscape (orientation: landscape);
+
+// Portrait mode
+@custom-media --portrait (orientation: portrait);

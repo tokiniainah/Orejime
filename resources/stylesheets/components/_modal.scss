@@ -1,0 +1,162 @@
+/**
+ * ----------------------------------
+ * Modal
+ * ----------------------------------
+ */
+// Variables
+$modal-overlay-color: transparent !default;
+$modal-bg-color: col(white) !default;
+$modal-color-default: col(blue) !default;
+$modal-size-default: font(default) !default;
+$modal-size-small: font(small) !default;
+$modal-size-medium: font(medium) !default;
+$modal-border-color: col(light-gold) !default;
+
+.orejime-ModalPortal {
+  .orejime-ModalOverlay {
+    background: $modal-overlay-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-index;
+    padding: calc(#{$gutter} * 2) $gutter;
+  }
+
+  .orejime-ModalWrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    z-index: calc(#{$z-index} + 1);
+    transform: translate3d(-50%, -50%, 0);
+
+    @media (--tablet) {
+      width: 640px;
+    }
+  }
+
+  .orejime-Modal {
+    font-size: $modal-size-default;
+    background-color: $modal-bg-color;
+
+    &-closeButton {
+      position: absolute;
+      top: $gutter;
+      right: $gutter;
+    }
+
+    &-title {
+      font-family: $font-montserrat;
+      font-size: $modal-size-medium;
+      font-weight: 600;
+      color: $modal-color-default;
+      margin-bottom: $gutter;
+      margin-top: 0;
+    }
+
+    &-description {
+      font-family: $font-montserrat;
+      font-size: $modal-size-small;
+      color: $modal-color-default;
+    }
+
+    &-privacyPolicyLink {
+      font-family: $font-montserrat;
+      font-size: $modal-size-small;
+      color: $modal-color-default;
+      text-decoration: none;
+      border-bottom: 1px dashed col(gold);
+      transition: border .3s ease;
+
+      &:hover {
+        border-bottom: 1px solid col(gold);
+      }
+    }
+
+    &-header {
+      position: relative;
+      padding: calc(#{$gutter} * 2) calc(#{$gutter} * 2) calc(#{$gutter} - 5px);
+      margin-bottom: 0;
+      border-bottom: 1px solid $modal-border-color;
+    }
+
+    &-body {
+      font-family: $font-montserrat;
+      color: $modal-color-default;
+      padding: $gutter calc(#{$gutter} * 2);
+    }
+
+    &-footer {
+      text-align: center;
+      padding: calc(#{$gutter} + 5px) calc(#{$gutter} * 2);
+      border-top: 1px solid $modal-border-color;
+    }
+  }
+
+  .orejime-AppToggles {
+    text-align: center;
+    margin-bottom: $gutter;
+
+    &-button {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+
+  .orejime-AppList {
+    display: block;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+      display: block;
+      position: relative;
+      line-height: 1.5;
+      vertical-align: middle;
+      padding-left: 65px;
+      margin-bottom: calc(#{$gutter} * 2);
+      min-height: 40px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .orejime-AppItem {
+    font-size: $modal-size-default;
+
+    label {
+      color: $modal-color-default;
+    }
+
+    &-title {
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    &-required,
+    &-optOut {
+      color: col(gold);
+      font-weight: 400;
+      margin-left: 5px;
+    }
+
+    &-fullDescription {
+      font-size: $modal-size-small;
+    }
+
+    .checker {
+      opacity: 0;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      margin: 0;
+    }
+  }
+}

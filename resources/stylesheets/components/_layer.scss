@@ -1,0 +1,99 @@
+/**
+ * ----------------------------------
+ * layers
+ * ----------------------------------
+ */
+
+// Variables
+$layer-overlay-color: rgba(col(blue), .85) !default;
+$layer-bg-color: col(white) !default;
+$layer-size-default: font(big) !default;
+
+body {
+  &.orejime-layer-show {
+    overflow: hidden;
+  }
+}
+
+.orejime-AppContainer {
+  transition: all .3s linear;
+
+  .orejime-Notice {
+    background: $layer-overlay-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-index;
+    padding: calc(#{$gutter} * 2) $gutter;
+
+    // Body
+    &-body {
+      padding: calc(#{$gutter} * 2);
+      background-color: $layer-bg-color;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      z-index: calc(#{$z-index} + 1);
+      transform: translate3d(-50%, -50%, 0);
+
+      @media (--tablet) {
+        max-width: 640px;
+      }
+    }
+
+    // Title
+    &-description {
+      font-family: $font-montserrat;
+      font-size: $layer-size-default;
+      font-weight: 700;
+      color: col(blue);
+      text-align: center;
+      margin-bottom: calc(#{$gutter} * 2);
+
+      &:before {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto $gutter;
+        background: {
+          image: svg-inline(cookies);
+          repeat: no-repeat;
+          position: center;
+          size: 70px;
+        }
+      }
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+
+      .orejime-Notice-actionItem--decline {
+        display: none;
+      }
+
+      > li {
+        list-style: none;
+        flex-shrink: 0;
+        flex-grow: 0;
+        width: 100%;
+        padding: 0 5px;
+
+        @media (--small) {
+          width: 190px;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+/**
+ * ----------------------------------
+ * Variables
+ * ----------------------------------
+ */
+// breakpoint
+$breakpoints: (
+  xsmall: 360px,
+  small: 640px,
+  tablet: 768px,
+  medium: 960px,
+  large: 1200px,
+  xlarge: 1440px
+) !default;
+
+// space
+$gutter: 15px !default;
+
+// fonts
+$font-sizes: (
+  small: 12px,
+  default: 14px,
+  medium: 18px,
+  big: 20px
+) !default;
+
+// z-index
+$z-index: 10000 !default;
+
+// box-shadow
+$box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2), 5px 5px 10px 0 rgba(0, 0, 0, .19) !default;

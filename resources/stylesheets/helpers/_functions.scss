@@ -1,0 +1,20 @@
+/**
+ * ----------------------------------
+ * Functions
+ * ----------------------------------
+ */
+
+// Get colors
+@function col($color) {
+  @return map-get($theme-colors, '#{$color}');
+}
+
+// Get font-size
+@function font($size) {
+  @return map-get($font-sizes, '#{$size}');
+}
+
+// Get media
+@function media($size) {
+  @return map-get($breakpoints, '#{$size}');
+}
